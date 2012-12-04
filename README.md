@@ -144,25 +144,25 @@ Implementation
 
 ### Directories
 
-**File['${apt_conf_d}/${priority}${name}'**
+File['${apt_conf_d}/${priority}${name}'
 
-**File['/etc/apt/sources.list']**
+File['/etc/apt/sources.list']
 
-**File['etc/apt/sources.list.d']**
+File['etc/apt/sources.list.d']
 
-**File['etc/apt/preferences.d']**
+File['etc/apt/preferences.d']
 
-**File['${apt_conf_d}/99unauth']**
+File['${apt_conf_d}/99unauth']
 
-**File['${apt_conf_d}/proxy']**
+File['${apt_conf_d}/proxy']
 
-**File['${name}.pref']**
+File['${name}.pref']
 
-**File['${sources_list_d}/${sources_list_d_filename}']**
+File['${sources_list_d}/${sources_list_d_filename}']
 
-**File['${root}/apt.conf.d/01release']**
+File['${root}/apt.conf.d/01release']
 
-**File['${sources_list_d}/${name}.list']**
+File['${sources_list_d}/${name}.list']
 
 ### Packages
 
