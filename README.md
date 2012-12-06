@@ -4,8 +4,8 @@ apt
 Module Description
 -------------------
 
-Apt is a package management system. This module gives you an interface to work with apt, 
-including the ability to add and delete sources along with other management tasks. 
+APT is a package management system. This module gives you an interface to work with APT, 
+including the ability to add and delete sources, along with other management tasks. 
 
 Usage
 ------
@@ -14,7 +14,7 @@ Usage
 
 **apt**
 
-To install apt
+Install APT
 
     class { 'apt':
       always_apt_update    => false,
@@ -46,7 +46,7 @@ With the above class, you may choose to include only one of the attributes.
 
 **apt::update**
 
-Get a regularly updated apt source repository list
+Get a regularly updated APT source repository list
 
 	file { '/tmp/foo':
      ensure  => file,
@@ -73,7 +73,7 @@ Force a package to be installed from a specific release
 
 **apt::key**
 
-Add a key to the list of keys used by apt to authenticate packages
+Add a key to the list of keys used by APT to authenticate packages
 
     apt::key { "puppetlabs":
       key        => "4BD6EC30",
@@ -85,11 +85,11 @@ Add a key to the list of keys used by apt to authenticate packages
       key_source => "http://pkg.jenkins-ci.org/debian/jenkins-ci.org.key",
     }
 
-Note that use of the "key_source" parameter requires wget to be installed and working.
+Note that use of the `key_source` parameter requires wget to be installed and working.
 
 **apt::pin**
 
-Add an apt pin for a certain release
+Add an APT pin for a certain release
 
     apt::pin { "karmic": priority => 700 }
     apt::pin { "karmic-updates": priority => 700 }
@@ -97,7 +97,7 @@ Add an apt pin for a certain release
 
 **apt::ppa**
 
-Add a ppa repository
+Add a PPA repository
 
 	$ add-apt-repository
 
@@ -109,7 +109,7 @@ This is still somewhat experimental.
 
 **apt::release**
 
-Set the default apt release
+Set the default APT release
 
     apt::release { "karmic": }
 
@@ -117,7 +117,7 @@ Useful when using repositories that are unstable in Ubuntu.
 
 **apt::source**
 
-Add an apt source to `/etc/apt/sources.list.d/`
+Add an APT source to `/etc/apt/sources.list.d/`
 
     apt::source { "debian_unstable":
       location          => "http://debian.mirror.iweb.ca/debian/",
@@ -144,25 +144,25 @@ Implementation
 
 ### Directories
 
-File['${apt_conf_d}/${priority}${name}'
+>File['${apt_conf_d}/${priority}${name}'
 
-File['/etc/apt/sources.list']
+>File['/etc/apt/sources.list']
 
-File['etc/apt/sources.list.d']
+>File['etc/apt/sources.list.d']
 
-File['etc/apt/preferences.d']
+>File['etc/apt/preferences.d']
 
-File['${apt_conf_d}/99unauth']
+>File['${apt_conf_d}/99unauth']
 
-File['${apt_conf_d}/proxy']
+>File['${apt_conf_d}/proxy']
 
-File['${name}.pref']
+>File['${name}.pref']
 
-File['${sources_list_d}/${sources_list_d_filename}']
+>File['${sources_list_d}/${sources_list_d_filename}']
 
-File['${root}/apt.conf.d/01release']
+>File['${root}/apt.conf.d/01release']
 
-File['${sources_list_d}/${name}.list']
+>File['${sources_list_d}/${name}.list']
 
 ### Packages
 
@@ -184,11 +184,6 @@ Please log tickets and issues at our [Report issues page] (http://projects.puppe
 Development
 ------------
 
- 
-	
-Disclaimer
------------
-
 Puppet Labs modules on the Puppet Forge are open projects, and community contributions
 are essential for keeping them great. We can’t access the huge number of platforms and
 myriad of hardware, software, and deployment configurations that Puppet is intended to serve.
@@ -197,7 +192,11 @@ We want to keep it as easy as possible to contribute changes so that our modules
 in your environment. There are a few guidelines that we need contributors to follow so
 that we can have a chance of keeping on top of things.
 
-You can read the complete module contribution guide [on the Puppet Labs wiki.](http://projects.puppetlabs.com/projects/module-site/wiki/Module_contributing)
+You can read the complete module contribution guide [on the Puppet Labs wiki.](http://projects.puppetlabs.com/projects/module-site/wiki/Module_contributing) 
+	
+Disclaimer
+-----------
+
 
 
 Contributors
